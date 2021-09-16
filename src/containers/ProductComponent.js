@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
 const ProductComponent=()=>{
     const products=useSelector((state)=>state.allProducts.products);
     const renderList=products.map((product)=>{
         const {id,title,image,price,category}=product;
         return(
-            <div className='four wide column' key={id}>
+            <div className='five wide column' key={id}>
+            <Link to={'/product/'+id}>
                 <div className='ui link cards'>        
                     <div className='card'> 
                         <div className='image'>
@@ -20,12 +22,13 @@ const ProductComponent=()=>{
                                                 </div>
                                             </div>
                                     </div>
+                                    </Link>
                              </div>
         );
         
     })
     return (
-        <h1>{renderList}</h1>
+        <span>{renderList}</span>
         );
     // const{id,title}=products[0];
     

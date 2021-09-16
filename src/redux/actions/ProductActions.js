@@ -7,7 +7,7 @@ payload:products,
 };
 };
 
-export const selectedProducted=(product)=>{
+export const selectedProduct=(product)=>{
     return{
     type:ActionTypes.SELECTED_PRODUCT,
     payload:product,
